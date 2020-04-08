@@ -1,7 +1,5 @@
 import os
 
-error_log = []
-
 
 # os.walk through a directory and return a list of file contents
 def get_file_list(input):
