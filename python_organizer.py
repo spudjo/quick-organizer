@@ -3,6 +3,7 @@ import os
 error_log = []
 
 
+# os.walk through a directory and return a list of file contents
 def get_file_list(input):
 
     file_list = []
@@ -15,7 +16,8 @@ def get_file_list(input):
     return file_list
 
 
-def generate_new_path(path, number):
+# returns string of new numbered path in case of duplicate file names
+def generate_numbered_path(path, number):
 
     number = ' (' + str(number) + ')'
     root, file = os.path.split(path)
@@ -25,31 +27,34 @@ def generate_new_path(path, number):
     return new_path
 
 
+# creates new directory if it does not exist
+def create_directory(directory):
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
+
 def sort_file_list(file_list, output):
 
     for path in file_list:
         try:
+            # separate root, file and extension
             root, file = os.path.split(path)
             file, ext = os.path.splitext(file)
-
             output_directory = os.path.join(output, ext[1:])
 
-            if not os.path.exists(output_directory):
-                os.makedirs(output_directory)
+            create_directory(output_directory)
 
             new_file = os.path.join(output_directory, file + ext)
 
             if os.path.exists(new_file):
                 number = 2
-                new_file_numbered = generate_new_path(new_file, number)
-
+                new_file_numbered = generate_numbered_path(new_file, number)
                 while os.path.exists(new_file_numbered):
                     number += 1
-                    new_file_numbered = generate_new_path(new_file, number)
+                    new_file_numbered = generate_numbered_path(new_file, number)
 
                 os.rename(path, new_file_numbered)
                 continue
-
             else:
                 os.rename(path, new_file)
 
@@ -57,13 +62,11 @@ def sort_file_list(file_list, output):
             print("errors")
 
 
-def main():
-    input = 'D:\Libraries\Documents\Programming\Projects\python-organizer\\test_files\input'
-    output = 'D:\Libraries\Documents\Programming\Projects\python-organizer\\test_files\output'
+def organize(input, output):
 
-    file_list = get_file_list(input)
-    sort_file_list(file_list, output)
+    inputs = list()
+    inputs.append(input)
 
-
-if __name__ == '__main__':
-    main()
+    for root in inputs:
+        file_list = get_file_list(root)
+        sort_file_list(file_list, output)
