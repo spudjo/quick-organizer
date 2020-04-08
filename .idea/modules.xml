@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/python-organizer.iml" filepath="$PROJECT_DIR$/.idea/python-organizer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/quick-organizer.iml" filepath="$PROJECT_DIR$/.idea/quick-organizer.iml" />
     </modules>
   </component>
 </project>

@@ -1,6 +1,6 @@
 import sys
 from PySide2.QtWidgets import QApplication, QDialog, QTextEdit, QPushButton, QVBoxLayout, QHBoxLayout, QFileDialog, QLabel, QMessageBox
-import python_organizer
+import file_organizer
 
 
 def create_popup(text='Text', informative_text='Informative Text', window_title='Title', icon=QMessageBox.Information):
@@ -18,7 +18,7 @@ class Form(QDialog):
 
     def __init__(self, parent=None):
         super(Form, self).__init__(parent)
-        self.setWindowTitle('Python Organizer')
+        self.setWindowTitle('Quick Organizer')
         self.setFixedSize(600, 400)
 
         self.input_label = QLabel('Input Folders')
@@ -85,7 +85,7 @@ class Form(QDialog):
 
             print(full_input[:-1])
             print(output)
-            python_organizer.organize(full_input[:-1], output)
+            file_organizer.organize(full_input[:-1], output)
 
             create_popup(text='Success!', informative_text='All files have been sorted', window_title='Success!', icon=QMessageBox.Information)
 
