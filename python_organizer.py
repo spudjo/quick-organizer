@@ -64,9 +64,6 @@ def sort_file_list(file_list, output):
 
 def organize(input, output):
 
-    inputs = list()
-    inputs.append(input)
-
-    for root in inputs:
+    for root in input:
         file_list = get_file_list(root)
         sort_file_list(file_list, output)
