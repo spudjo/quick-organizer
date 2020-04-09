@@ -8,12 +8,8 @@ Execute start.bat, then simply select all input folders, select an output folder
 
 ### Demo
 
-##### Input directories before organizing:
-![DemoA](resources/demoA.png)
 ##### Quick Organizer:
 ![DemoA](resources/demoB.png)
-##### Output directory after organizing:
-![DemoA](resources/demoC.png)
 
 ### TODO
 
