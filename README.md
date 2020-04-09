@@ -1,4 +1,4 @@
-# file-organizer
+# quick-organizer
 
 A simple GUI application that organizes files from multiple sources into an output folder, 
 sorting each file into subfolders by file type.
@@ -10,7 +10,7 @@ Execute start.bat, then simply select all input folders, select an output folder
 
 ##### Input directories before organizing:
 ![DemoA](resources/demoA.png)
-##### Python Organizer:
+##### Quick Organizer:
 ![DemoA](resources/demoB.png)
 ##### Output directory after organizing:
 ![DemoA](resources/demoC.png)
